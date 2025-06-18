@@ -1,39 +1,45 @@
-# 🧠 AI PDF Summarizer
+# 📄 AI PDF Summarizer
 
-A simple and powerful web app to summarize PDF documents using Hugging Face Transformers and Streamlit.
+An AI-powered PDF summarization tool built using Python, Streamlit, and Hugging Face Transformers.
+
+This app allows users to upload PDF files and generate concise summaries using state-of-the-art NLP models. It now includes a chatbot feature to interactively ask questions based on the PDF content.
 
 ---
 
 ## 🚀 Features
 
-✅ Upload any PDF  
-✅ Extracts text using PyPDF2  
-✅ Splits text into manageable chunks  
-✅ Summarizes using Hugging Face (`distilbart-cnn`)  
-✅ Real-time progress updates  
-✅ Downloadable summary as `.txt`  
-✅ 100% local, no external backend needed  
+- 📤 Upload any PDF document
+- 🧠 Summarize long PDFs using `distilBART` from Hugging Face
+- 📄 View full extracted text
+- 📥 Download the AI-generated summary as a `.txt` file
+- 💬 **NEW**: Chat with your PDF via an integrated external chatbot
 
 ---
 
-## 📸 Screenshot
+## 💬 Chatbot Integration
 
-![screenshot](https://via.placeholder.com/800x400?text=AI+PDF+Summarizer+Demo)
+After summarizing your PDF, you can now interact with the document using a chatbot to ask specific questions.
 
----
+👉 [Click here to open the PDF Chatbot](https://chatwithpdf-ebtfg4y3yfjyhphqvsxcdc.streamlit.app/)
 
-## 🧰 Tech Stack
-
-- [Streamlit](https://streamlit.io/)
-- [Hugging Face Transformers](https://huggingface.co/transformers/)
-- [PyPDF2](https://pypi.org/project/PyPDF2/)
+> Upload the same PDF to the chatbot and get context-aware answers.
 
 ---
 
-## 📦 Installation
+## 🛠️ Tech Stack
 
-### 1. Clone the repo
+- Python 3.11+
+- Streamlit
+- Hugging Face Transformers (`sshleifer/distilbart-cnn-12-6`)
+- PyPDF2
 
-```bash
-git clone https://gitlab.com/yourusername/ai-pdf-summarizer.git
-cd ai-pdf-summarizer
+---
+
+## 🧪 How to Run Locally
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Ajay-puttam/ai-pdf-summarizer.git
+   cd ai-pdf-summarizer
+   pip install -r requirements.txt
+   streamlit run ai_pdf_summarizer.py
