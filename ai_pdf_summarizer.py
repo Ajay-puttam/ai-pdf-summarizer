@@ -4,6 +4,9 @@ from transformers import AutoTokenizer, AutoModelForSeq2SeqLM, pipeline
 import tempfile
 import os
 
+# ---------- Streamlit UI ----------
+st.set_page_config(page_title="AI PDF Summarizer", layout="centered")
+
 
 # ---------- Load Hugging Face Model ----------
 @st.cache_resource
@@ -46,8 +49,7 @@ def summarize_text(text, chunk_size=700, overlap=100):
     return summary.strip()
 
 
-# ---------- Streamlit UI ----------
-st.set_page_config(page_title="AI PDF Summarizer", layout="centered")
+# ---------- Main App ----------
 st.title("📄 AI PDF Summarizer")
 st.markdown("🔍 Summarize any PDF using Hugging Face Transformers")
 
@@ -86,5 +88,18 @@ if pdf_file:
         with st.expander("📄 View Extracted PDF Text"):
             st.text_area("Raw Text", text, height=300)
 
+# ---------- Chatbot Redirect ----------
 st.markdown("---")
 st.caption("⚙️ Powered by Streamlit & Hugging Face Transformers")
+
+st.markdown("### 💬 Chat with your PDF?")
+st.markdown(
+    """
+    <a href="https://chatwithpdf-ebtfg4y3yfjyhphqvsxcdc.streamlit.app/" target="_blank">
+        <button style='font-size:18px;padding:10px 20px;border:none;border-radius:8px;background-color:#4CAF50;color:white;cursor:pointer;'>
+            🚀 Open PDF Chatbot
+        </button>
+    </a>
+    """,
+    unsafe_allow_html=True,
+)
